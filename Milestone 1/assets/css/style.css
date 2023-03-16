@@ -31,9 +31,11 @@ button, i {
     cursor: pointer;
 }
 
-.space {
-    height: 2px;
-    color: lightgray;
+.profile_img img,
+.profile_img_circle img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
 }
 
 /********** HEADERS ************/
@@ -52,7 +54,6 @@ button, i {
 
 .user_chat .profile_img,
 .user_acc .profile_img {
-    background-color: darkcyan;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -80,7 +81,7 @@ button, i {
 } 
 
 .contact_ctn {
-    height: calc(100% - 210px);;
+    height: calc(90% - 210px);;
 }
 
 .contact_ctn > ul {
@@ -89,7 +90,7 @@ button, i {
 }
 
 .contact_info {
-    height: calc(100% / 8);
+    height: calc(100% / 7);
 }
 
 .contact_info:hover {

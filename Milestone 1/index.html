@@ -25,8 +25,10 @@
           <!-- left header  -->
           <header class="user_acc">
             <div class="profile_ctn">
-              <div class="profile_img"></div>
-              <span>Nome</span>
+              <div class="profile_img">
+                <img :src="myProfile.io" alt="immagine profilo">
+              </div>
+              <span>{{ myProfile.nome }}</span>
             </div>
             <div class="acc_icons">
               <i class="fa-solid fa-circle-notch"></i>
@@ -65,13 +67,14 @@
           <div class="contact_ctn">
             <ul>
               <!-- contact item  -->
-              <li class="contact_info">
+              <li class="contact_info" v-for="(contact, index) in contacts" @click="openChat(index, $event)">
                 <div class="profile_ctn">
                   <div class="profile_img_circle">
+                    <img :src="contact.avatar" alt="">
                   </div>
                 </div>
                 <div class="profile_info">
-                  <span>Nome</span>
+                  <span>{{ contact.name }}</span>
                   <div>
                     <small>Ultimo messaggio inviato</small>
                   </div>
@@ -81,7 +84,6 @@
                 </div>
               </li>
                <!-- /contact item  -->
-              <hr class="space">
             </ul>
           </div>
           <!-- /contact list container  -->
@@ -93,9 +95,11 @@
           <!-- rigth header  -->
           <header class="user_chat">
             <div class="profile_ctn">
-              <div class="profile_img"></div>
+              <div class="profile_img">
+                <img :src="contacts[current].avatar" alt="">
+              </div>
               <div class="profile_info">
-                <span>Nome</span>
+                <span>{{ contacts[current].name }}</span>
                 <div>
                   <small>Ultimo messaggio inviato</small>
                 </div>
