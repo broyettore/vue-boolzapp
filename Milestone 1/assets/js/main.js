@@ -10,7 +10,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // a 
+            searchBar: "",
         }
     },
     methods: {
