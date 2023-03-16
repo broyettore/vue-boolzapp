@@ -36,7 +36,6 @@ button, i {
     color: lightgray;
 }
 
-
 /********** HEADERS ************/
 
 /* Contacts header  */
@@ -244,20 +243,6 @@ button, i {
 .user_chat .acc_icons i {
     padding: 0 12px ;
 }
-
-.user_chat,
-.user_acc,
-.text_send {
-    height: 70px;
-    background-color: #eaeaea;
-}
-
-.msg_box {
-    background-image: url(../images/mine.jpg);
-    height: calc(100% - 140px);
-}
-
-
 /********** MAIN ************/
 
 .main-ctn {
@@ -282,7 +267,63 @@ button, i {
     width: 70%;
     overflow-y: scroll;
 }
-/********** FOOTER ************/
+
+.user_chat,
+.user_acc,
+.text_send {
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+/********** CHAT MAIN ************/
+.msg_box {
+    background-image: url(../images/mine.jpg);
+    height: calc(100% - 140px);
+    padding: 80px;
+}
+
+.msg {
+    width: 100%;
+    display: grid;
+}
+
+.sent,
+.received {
+    height: 60px;
+    width: 35%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.sent {
+    background-color: #d5f9b9;
+    justify-self: end;
+}
+
+.received {
+    justify-self: start;
+    background-color: #ffff;
+}
+
+.msg_content {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 0 10px;
+    height: 30px;
+}
+
+.msg_time {
+    height: 10px;
+    text-align: end;
+    font-size: 0.8rem;
+    color: lightgray;
+    font-weight: 500;
+    padding: 12px 5px 5px 0;
+}
+
+
+
+/********** CHAT FOOTER ************/
 .emojis_ctn,
 .audio,
 .text_field {
@@ -316,33 +357,5 @@ button, i {
 #send_msg:focus {
     outline: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /********** MEDIA QUERIES ************/
