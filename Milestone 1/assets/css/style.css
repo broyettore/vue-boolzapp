@@ -10,7 +10,7 @@ body {
     background: rgb(0,150,136);
     background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 16%, rgba(217,219,211,1) 16%);
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    height: calc(100vh - 20px);
 }
 
 [v-cloak] {
@@ -19,6 +19,11 @@ body {
 
 /********** HEADERS ************/
 
+/* Contacts header  */
+.search_ctn {
+    height: 140px;
+    background-color: cadetblue;
+} 
 
 
 
@@ -27,9 +32,46 @@ body {
 
 
 
+
+/* Chat header  */
+
+.user_chat,
+.user_acc,
+.text_send {
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+.msg_box {
+    background-image: url(../images/mine.jpg);
+    height: calc(100% - 140px);
+}
 
 
 /********** MAIN ************/
+
+.main-ctn {
+    display: flex;
+    max-width: 80%;
+    height: 95vh;
+    background-color: red;
+    margin: 20px auto 0;
+    z-index: 10;
+}
+
+.main-ctn .app_left, 
+.main-ctn .app_right {
+    height: 100%;
+}
+
+.main-ctn .app_left {
+    background-color: blue;
+    width: 30%;
+}
+
+.main-ctn .app_right {
+    width: 70%;
+}
 
 
 
