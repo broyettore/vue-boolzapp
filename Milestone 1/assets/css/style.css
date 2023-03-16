@@ -1,0 +1,75 @@
+/********** RESET ************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 16%, rgba(217,219,211,1) 16%);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/********** HEADERS ************/
+
+
+
+
+
+
+
+
+
+
+
+/********** MAIN ************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********** FOOTER ************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********** MEDIA QUERIES ************/
