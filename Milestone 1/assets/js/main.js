@@ -11,6 +11,7 @@ createApp({
     data() {
         return {
             searchBar: "",
+            sendMsg: "",
         }
     },
     methods: {

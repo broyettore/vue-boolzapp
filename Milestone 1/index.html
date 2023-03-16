@@ -20,9 +20,22 @@
     <div id="app" v-cloak>
       <!-- main  -->
       <main class="main-ctn">
-        <!-- contacts container  -->
+        <!-- Left container  -->
         <div class="app_left">
-          <header class="user_acc"></header>
+          <!-- left header  -->
+          <header class="user_acc">
+            <div class="profile_ctn">
+              <div class="profile_img"></div>
+              <span>Nome</span>
+            </div>
+            <div class="acc_icons">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
+          <!-- /left header  -->
+          <!-- search and alert container  -->
           <div class="search_ctn">
             <!-- alert container  -->
             <div class="search_top">
@@ -47,8 +60,11 @@
             </div>
              <!-- /search bar  -->
           </div>
+          <!-- /search and alert container  -->
+          <!-- contact list container  -->
           <div class="contact_ctn">
             <ul>
+              <!-- contact item  -->
               <li class="contact_info">
                 <div class="profile_ctn">
                   <div class="profile_img_circle">
@@ -64,32 +80,44 @@
                   <span>12:00</span>
                 </div>
               </li>
+               <!-- /contact item  -->
               <hr class="space">
-              <li class="contact_info">
-                <div class="profile_ctn">
-                  <div class="profile_img_circle">
-                  </div>
-                </div>
-                <div class="profile_info">
-                  <span>Nome</span>
-                  <div>
-                    <small>Ultimo messaggio inviato</small>
-                  </div>
-                </div>
-                <div class="profile_msg_time">
-                  <span>12:00</span>
-                </div>
-              </li>
             </ul>
           </div>
+          <!-- /contact list container  -->
         </div>
-        <!-- /contacts container  -->
+        <!-- /Left container  -->
 
         <!-- chat container  -->
         <div class="app_right">
-          <header class="user_chat"></header>
+          <header class="user_chat">
+            <div class="profile_ctn">
+              <div class="profile_img"></div>
+              <div class="profile_info">
+                <span>Nome</span>
+                <div>
+                  <small>Ultimo messaggio inviato</small>
+                </div>
+              </div>
+            </div>
+            <div class="acc_icons">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
           <main class="msg_box"></main>
           <footer class="text_send">
+            <div class="emojis_ctn">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div class="text_field">
+              <label for="send_msg"></label>
+              <input type="text" v-model="sendMsg" name="send_msg" id="send_msg" placeholder="Scrivi un messaggio">
+            </div>
+            <div class="audio">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
           </footer>
         </div>
         <!-- /chat container  -->

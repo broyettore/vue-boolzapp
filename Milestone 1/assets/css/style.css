@@ -40,6 +40,41 @@ button, i {
 /********** HEADERS ************/
 
 /* Contacts header  */
+
+.user_acc,
+.user_chat,
+.text_send  {
+    display: flex;
+}
+
+.user_acc .profile_ctn {
+    width: 25%;
+}
+
+.user_chat .profile_img,
+.user_acc .profile_img {
+    background-color: darkcyan;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.user_chat .acc_icons,
+.user_acc .acc_icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 75%;
+}
+
+.user_chat .acc_icons i ,
+.user_acc .acc_icons i {
+    color: #b1b1b1;
+    padding: 0 10px ;
+    font-size: 1.3rem;
+}
+
 .search_ctn {
     height: 140px;
     background-color: #f3eeea;
@@ -102,13 +137,18 @@ button, i {
 .bell_ctn,
 .bell_circle,
 .contact_info,
-.profile_ctn {
+.profile_ctn,
+.emojis_ctn,
+.audio,
+.text_field  {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .bell_ctn,
+.user_acc .profile_ctn,
+.user_acc .acc_icons,
 .profile_ctn,
 .profile_info,
 .profile_msg_time  {
@@ -185,6 +225,25 @@ button, i {
 }
 
 /* Chat header  */
+.user_chat .profile_ctn {
+    padding-left: 8px;
+    justify-content: start;
+    width: 30%;
+}
+
+.user_chat .profile_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user_chat .acc_icons {
+    width: 70%;
+}
+
+.user_chat .acc_icons i {
+    padding: 0 12px ;
+}
 
 .user_chat,
 .user_acc,
@@ -223,20 +282,41 @@ button, i {
     width: 70%;
     overflow-y: scroll;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /********** FOOTER ************/
+.emojis_ctn,
+.audio,
+.text_field {
+    height: 100%;
+}
+
+.emojis_ctn,
+.audio {
+    width: 10%;
+}
+
+.emojis_ctn i,
+.audio i {
+    color: #6b7375;
+    font-size: 1.5rem;
+}
+
+.text_field {
+    width: 80%;
+}
+
+#send_msg {
+    font-weight: bold;
+    color: #000;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 8px;
+}
+
+#send_msg:focus {
+    outline: none;
+}
+
 
 
 
