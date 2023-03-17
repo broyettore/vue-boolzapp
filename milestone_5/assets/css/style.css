@@ -94,9 +94,13 @@ button, i {
     height: calc(100% / 7);
 }
 
-.contact_info:hover {
+.contact_info:hover{
     background-color: #e9ebeb;
     cursor: pointer;
+}
+
+.contact_info:focus {
+    background: red;
 }
 
 .profile_ctn {
@@ -295,6 +299,10 @@ button, i {
     width: 35%;
     border-radius: 8px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 6px;
 }
 
 .msg_sent.sent {
@@ -309,21 +317,52 @@ button, i {
 
 .msg_content {
     display: flex;
-    align-items: center;
-    padding: 20px 0 0 10px;
-    height: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%
 }
 
 .msg_time {
-    height: 10px;
-    text-align: end;
-    font-size: 0.8rem;
-    color: lightgray;
-    font-weight: 500;
-    padding: 12px 5px 5px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
 }
 
+.msg_time span {
+    color: lightgray;
+}
 
+.del_toggle {
+    position: relative;
+}
+
+.del_option {
+    display: none;
+    flex-direction: column;
+    width: 150px;
+    background-color: #ffff;
+    z-index: 5;
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+
+.del_option span {
+    color: #000;
+    padding: 8px;
+}
+
+.del_option span:hover {
+    background-color: darkcyan;
+    cursor: pointer;
+}
+
+.show {
+    display: flex;
+}
 
 /********** CHAT FOOTER ************/
 .emojis_ctn,

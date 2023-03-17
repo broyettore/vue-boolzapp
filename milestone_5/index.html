@@ -80,7 +80,7 @@
                   </div>
                 </div>
                 <div class="profile_msg_time">
-                  <span>12:00</span>
+                  <span>{{ currentTime() }}</span>
                 </div>
               </li>
                <!-- /contact item  -->
@@ -101,7 +101,7 @@
               <div class="profile_info">
                 <span>{{ searchUser()[current].name }}</span>
                 <div>
-                  <small>Ultimo messaggio inviato</small>
+                  <small>Ultimo messaggio inviato alle {{ currentTime() }}</small>
                 </div>
               </div>
             </div>
@@ -116,8 +116,19 @@
             <main class="msg_box">
               <div class="msg">
                 <div class="msg_sent" :class="getStatus(element.status)" v-for="element in searchUser()[current].messages">
-                  <div class="msg_content"><span>{{ element.message }}</span></div>
-                  <div class="msg_time"><span>15:30</span></div>
+                  <div class="msg_content">
+                    <span>{{ element.message }}</span>
+                  </div>
+                  <div class="msg_time">
+                    <div class="del_toggle">
+                      <i class="fa-solid fa-chevron-down" @click="toggleDel(element)"></i>
+                      <div class="del_option" :class="{ show: element.isShow }">
+                        <span>Message Info</span>
+                        <span @click="delMsg(element)">Delete Message</span>
+                      </div>
+                    </div>
+                    <span>{{ currentTime() }}</span>
+                  </div>
                 </div>
               </div>
             </main>
@@ -143,7 +154,10 @@
 
     </div>
     <!-- /vue container  -->
-    
+
+    <!-- script luxon  -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <!-- /script luxon  -->
      <!-- script Vue  -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
      <!-- script ms js  -->
