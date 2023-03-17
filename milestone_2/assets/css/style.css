@@ -267,7 +267,6 @@ button, i {
 
 .main-ctn .app_right {
     width: 70%;
-    overflow-y: scroll;
 }
 
 .user_chat,
@@ -282,6 +281,7 @@ button, i {
     background-image: url(../images/mine.jpg);
     height: calc(100% - 140px);
     padding: 80px;
+    overflow-y: scroll;
 }
 
 .msg {
@@ -289,20 +289,20 @@ button, i {
     display: grid;
 }
 
-.sent,
-.received {
+.msg_sent,
+.msg_received {
     height: 60px;
     width: 35%;
     border-radius: 8px;
     margin-bottom: 8px;
 }
 
-.sent {
+.msg_sent .sent {
     background-color: #d5f9b9;
     justify-self: end;
 }
 
-.received {
+.msg_received .received {
     justify-self: start;
     background-color: #ffff;
 }
