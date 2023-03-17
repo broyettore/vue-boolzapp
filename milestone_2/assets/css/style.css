@@ -297,12 +297,12 @@ button, i {
     margin-bottom: 8px;
 }
 
-.msg_sent .sent {
+.msg_sent.sent {
     background-color: #d5f9b9;
     justify-self: end;
 }
 
-.msg_received .received {
+.msg_sent.received {
     justify-self: start;
     background-color: #ffff;
 }

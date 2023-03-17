@@ -186,6 +186,14 @@ createApp({
         openChat(index, event) {
             this.current = index;
             console.log(this.current)
-        }
+        },
+
+        getStatus(property){
+            if (property === "sent") {
+                return "sent"
+            } else {
+                return "received"
+            }
+          }
     }
 }).mount("#app")

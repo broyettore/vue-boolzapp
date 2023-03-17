@@ -115,21 +115,9 @@
           <!-- messages  -->
             <main class="msg_box">
               <div class="msg">
-                <div class="msg_sent">
-                  <div class="msg_content"><span>{{ contacts[current].messages.message}}</span></div>
+                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in contacts[current].messages">
+                  <div class="msg_content"><span>{{ element.message }}</span></div>
                   <div class="msg_time"><span>15:30</span></div>
-                </div>
-              </div>
-              <div class="msg">
-                <div class="sent">
-                  <div class="msg_content"><span>Ricordati di stendere i panni</span></div>
-                  <div class="msg_time"><span>15:32</span></div>
-                </div>
-              </div>
-              <div class="msg">
-                <div class="msg_received">
-                  <div class="msg_content"><span>Tutto fatto!</span></div>
-                  <div class="msg_time"><span>16:30</span></div>
                 </div>
               </div>
             </main>
