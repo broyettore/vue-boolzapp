@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Font awesome  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Google Font  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      <!-- ms css  -->
+      <link rel="stylesheet" href="assets/css/style.css">
+    <title>WhatsApp v2</title>
+</head>
+<body>
+
+    <!-- vue container  -->
+    <div id="app" v-cloak>
+      <!-- main  -->
+      <main class="main-ctn">
+        <!-- Left container  -->
+        <div class="app_left">
+          <!-- left header  -->
+          <header class="user_acc">
+            <div class="profile_ctn">
+              <div class="profile_img">
+                <img :src="myProfile.io" alt="immagine profilo">
+              </div>
+              <span>{{ myProfile.nome }}</span>
+            </div>
+            <div class="acc_icons">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
+          <!-- /left header  -->
+          <!-- search and alert container  -->
+          <div class="search_ctn">
+            <!-- alert container  -->
+            <div class="search_top">
+              <div class="bell_ctn">
+                <div class="bell_circle">
+                  <i class="fa-solid fa-bell-slash"></i>
+                </div>
+              </div>
+              <div class="alert_ctn">
+                <span>Ricevi notifiche di nuovi messaggi</span>
+                <div>
+                  <small>Attiva notifiche desktop</small>
+                </div>
+              </div>
+            </div>
+            <!-- /alert container  -->
+            <!-- search bar  -->
+            <div class="search_bottom">
+              <label for="search-bar"></label>
+              <button class="search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" name="search-bar" id="search-bar" v-model="searchBar" placeholder="Cerca o inizia una nuova chat">
+            </div>
+             <!-- /search bar  -->
+          </div>
+          <!-- /search and alert container  -->
+          <!-- contact list container  -->
+          <div class="contact_ctn">
+            <ul>
+              <!-- contact item  -->
+              <li class="contact_info" v-for="(contact, index) in contacts" @click="openChat(index, $event)">
+                <div class="profile_ctn">
+                  <div class="profile_img_circle">
+                    <img :src="contact.avatar" alt="">
+                  </div>
+                </div>
+                <div class="profile_info">
+                  <span>{{ contact.name }}</span>
+                  <div>
+                    <small>Ultimo messaggio inviato</small>
+                  </div>
+                </div>
+                <div class="profile_msg_time">
+                  <span>12:00</span>
+                </div>
+              </li>
+               <!-- /contact item  -->
+            </ul>
+          </div>
+          <!-- /contact list container  -->
+        </div>
+        <!-- /Left container  -->
+
+        <!-- chat container  -->
+        <div class="app_right">
+          <!-- rigth header  -->
+          <header class="user_chat">
+            <div class="profile_ctn">
+              <div class="profile_img">
+                <img :src="contacts[current].avatar" alt="">
+              </div>
+              <div class="profile_info">
+                <span>{{ contacts[current].name }}</span>
+                <div>
+                  <small>Ultimo messaggio inviato</small>
+                </div>
+              </div>
+            </div>
+            <div class="acc_icons">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
+          <!-- /rigth header  -->
+          <!-- messages  -->
+            <main class="msg_box">
+              <div class="msg">
+                <div class="sent">
+                  <div class="msg_content"><span>Hai portato a spasso il cane ?</span></div>
+                  <div class="msg_time"><span>15:30</span></div>
+                </div>
+              </div>
+              <div class="msg">
+                <div class="sent">
+                  <div class="msg_content"><span>Ricordati di stendere i panni</span></div>
+                  <div class="msg_time"><span>15:32</span></div>
+                </div>
+              </div>
+              <div class="msg">
+                <div class="received">
+                  <div class="msg_content"><span>Tutto fatto!</span></div>
+                  <div class="msg_time"><span>16:30</span></div>
+                </div>
+              </div>
+            </main>
+          <!-- /messages  -->
+          <!-- send bar  -->
+          <footer class="text_send">
+            <div class="emojis_ctn">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div class="text_field">
+              <label for="send_msg"></label>
+              <input type="text" v-model="sendMsg" name="send_msg" id="send_msg" placeholder="Scrivi un messaggio">
+            </div>
+            <div class="audio">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </footer>
+          <!-- /send bar  -->
+        </div>
+        <!-- /chat container  -->
+      </main>
+      <!-- main  -->
+
+    </div>
+    <!-- /vue container  -->
+    
+     <!-- script Vue  -->
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+     <!-- script ms js  -->
+     <script src="assets/js/main.js"></script>
+</body>
+</html>
