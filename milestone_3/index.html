@@ -129,7 +129,7 @@
             </div>
             <div class="text_field">
               <label for="send_msg"></label>
-              <input type="text" v-model="sendMsg" name="send_msg" id="send_msg" placeholder="Scrivi un messaggio">
+              <input type="text" v-model="sendMsg" @keyup.enter="sendText" name="send_msg" id="send_msg" placeholder="Scrivi un messaggio">
             </div>
             <div class="audio">
               <i class="fa-solid fa-microphone"></i>

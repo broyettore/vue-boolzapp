@@ -11,6 +11,8 @@ createApp({
         return {
             searchBar: "",
             sendMsg: "",
+            answer: null,
+            timer: 1,
             current: 0,
             myProfile : {
                 io: `assets/images/avatar_2.jpg`,
@@ -193,6 +195,19 @@ createApp({
                 return "sent"
             } else {
                 return "received"
+            }
+          },
+
+          sendText() {
+            if (this.sendMsg.trim().toLowerCase() !== "") {
+                this.contacts[this.current].messages.push({date: '10/01/2020 15:30:55', message: this.sendMsg, status: "sent"});
+                this.sendMsg = "";
+
+                this.answer = setTimeout(() => {
+                    this.sendMsg = "ok",
+                    this.contacts[this.current].messages.push({date: '10/01/2020 15:31:55', message: this.sendMsg, status: "received"});
+                    this.sendMsg = "";
+                }, this.timer * 1000);
             }
           }
     }
