@@ -58,7 +58,7 @@
             <div class="search_bottom">
               <label for="search-bar"></label>
               <button class="search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-              <input type="text" name="search-bar" id="search-bar" v-model="searchBar" placeholder="Cerca o inizia una nuova chat">
+              <input type="text" name="search-bar" id="search-bar" v-model="searchBar" @keyup="searchUser" placeholder="Cerca o inizia una nuova chat">
             </div>
              <!-- /search bar  -->
           </div>
@@ -67,7 +67,7 @@
           <div class="contact_ctn">
             <ul>
               <!-- contact item  -->
-              <li class="contact_info" v-for="(contact, index) in contacts" @click="openChat(index, $event)">
+              <li class="contact_info" v-for="(contact, index) in searchUser()" @click="openChat(index, $event)">
                 <div class="profile_ctn">
                   <div class="profile_img_circle">
                     <img :src="contact.avatar" alt="">
@@ -96,10 +96,10 @@
           <header class="user_chat">
             <div class="profile_ctn">
               <div class="profile_img">
-                <img :src="contacts[current].avatar" alt="">
+                <img :src="searchUser()[current].avatar" alt="">
               </div>
               <div class="profile_info">
-                <span>{{ contacts[current].name }}</span>
+                <span>{{ searchUser()[current].name }}</span>
                 <div>
                   <small>Ultimo messaggio inviato</small>
                 </div>
@@ -115,7 +115,7 @@
           <!-- messages  -->
             <main class="msg_box">
               <div class="msg">
-                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in contacts[current].messages">
+                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in searchUser()[current].messages">
                   <div class="msg_content"><span>{{ element.message }}</span></div>
                   <div class="msg_time"><span>15:30</span></div>
                 </div>

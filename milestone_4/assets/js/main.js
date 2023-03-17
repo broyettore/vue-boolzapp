@@ -1,8 +1,7 @@
 'use strict'
 
-// Milestone 3
-// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 const { createApp } = Vue;
 
@@ -200,15 +199,23 @@ createApp({
 
           sendText() {
             if (this.sendMsg.trim().toLowerCase() !== "") {
-                this.contacts[this.current].messages.push({date: '10/01/2020 15:30:55', message: this.sendMsg, status: "sent"});
+                this.searchUser()[this.current].messages.push({date: '10/01/2020 15:30:55', message: this.sendMsg, status: "sent"});
                 this.sendMsg = "";
 
                 this.answer = setTimeout(() => {
                     this.sendMsg = "ok",
-                    this.contacts[this.current].messages.push({date: '10/01/2020 15:31:55', message: this.sendMsg, status: "received"});
+                    this.searchUser()[this.current].messages.push({date: '10/01/2020 15:31:55', message: this.sendMsg, status: "received"});
                     this.sendMsg = "";
                 }, this.timer * 1000);
             }
-          }
+          },
+
+          searchUser() {
+            if (this.searchBar !== "") {
+                return this.contacts.filter(element => element.name.toLowerCase().includes(this.searchBar.toLowerCase()));
+            } else {
+                return this.contacts
+            }
+          },
     }
 }).mount("#app")
