@@ -96,10 +96,10 @@
           <header class="user_chat">
             <div class="profile_ctn">
               <div class="profile_img">
-                <img :src="searchUser()[current].avatar" alt="">
+                <img :src="contacts[current].avatar" alt="">
               </div>
               <div class="profile_info">
-                <span>{{ searchUser()[current].name }}</span>
+                <span>{{ contacts[current].name }}</span>
                 <div>
                   <small>Ultimo messaggio inviato alle {{ currentTime() }}</small>
                 </div>
@@ -115,7 +115,7 @@
           <!-- messages  -->
             <main class="msg_box">
               <div class="msg">
-                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in searchUser()[current].messages">
+                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in contacts[current].messages">
                   <div class="msg_content">
                     <span>{{ element.message }}</span>
                   </div>

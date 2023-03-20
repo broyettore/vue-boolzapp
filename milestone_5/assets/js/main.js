@@ -209,8 +209,12 @@ createApp({
     },
     methods: {
         openChat(index, event) {
-            this.current = index;
-            console.log(this.current)
+            if(this.searchBar === ""){
+                this.current = index;
+              } else {
+                this.current = this.contacts.indexOf(this.searchUser()[index]);
+                console.log(this.current)
+              }
         },
 
         getStatus(property){
