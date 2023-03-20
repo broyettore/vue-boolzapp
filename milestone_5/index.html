@@ -115,7 +115,7 @@
           <!-- messages  -->
             <main class="msg_box">
               <div class="msg">
-                <div class="msg_sent" :class="getStatus(element.status)" v-for="element in contacts[current].messages">
+                <div class="msg_sent" :class="getStatus(element.status)" v-for="(element, index) in contacts[current].messages">
                   <div class="msg_content">
                     <span>{{ element.message }}</span>
                   </div>
@@ -124,7 +124,7 @@
                       <i class="fa-solid fa-chevron-down" @click="toggleDel(element)"></i>
                       <div class="del_option" :class="{ show: element.isShow }">
                         <span>Message Info</span>
-                        <span @click="delMsg(element)">Delete Message</span>
+                        <span @click="delMsg(index, $event)">Delete Message</span>
                       </div>
                     </div>
                     <span>{{ currentTime() }}</span>

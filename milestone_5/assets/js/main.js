@@ -15,6 +15,7 @@ createApp({
             answer: null,
             timer: 1,
             current: 0,
+            delCurrent: 0,
             newDate: new Date(),
             myProfile : {
                 io: `assets/images/avatar_2.jpg`,
@@ -227,12 +228,12 @@ createApp({
 
           sendText() {
             if (this.sendMsg.trim().toLowerCase() !== "") {
-                this.searchUser()[this.current].messages.push({date: '10/01/2020 15:30:55', message: this.sendMsg, status: "sent"});
+                this.contacts[this.current].messages.push({date: '10/01/2020 15:30:55', message: this.sendMsg, status: "sent"});
                 this.sendMsg = "";
 
                 this.answer = setTimeout(() => {
                     this.sendMsg = "ok",
-                    this.searchUser()[this.current].messages.push({date: '10/01/2020 15:31:55', message: this.sendMsg, status: "received"});
+                    this.contacts[this.current].messages.push({date: '10/01/2020 15:31:55', message: this.sendMsg, status: "received"});
                     this.sendMsg = "";
                 }, this.timer * 1000);
             }
@@ -250,8 +251,9 @@ createApp({
             return element.isShow = !element.isShow;
           },
 
-          delMsg(element) {
-            this.searchUser()[this.current].messages.splice(element, 1);
+          delMsg(index, event) {
+            this.delCurrent = index;
+            this.contacts[this.current].messages.splice(this.delCurrent, 1);
           },
 
            currentTime () {
